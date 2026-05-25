@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Redesign</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Prototype</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">MySite</h1>
-      <ul class="nav-links">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Login Screen -->
+  <div class="screen" id="login-screen">
+    <h2>Login</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button onclick="navigateTo('dashboard')">Login</button>
+  </div>
 
-  <section class="hero">
-    <h2>Welcome to the New Experience</h2>
-    <p>Clean, modern, and responsive design.</p>
-    <button class="cta">Get Started</button>
-  </section>
+  <!-- Dashboard Screen -->
+  <div class="screen hidden" id="dashboard-screen">
+    <h2>Dashboard</h2>
+    <button onclick="navigateTo('create-task')">+ Create Task</button>
+    <button onclick="navigateTo('settings')">Settings</button>
+    <button onclick="navigateTo('login')">Logout</button>
+  </div>
 
-  <footer>
-    <p>© 2026 MySite. All rights reserved.</p>
-  </footer>
+  <!-- Create Task Screen -->
+  <div class="screen hidden" id="create-task-screen">
+    <h2>New Task</h2>
+    <input type="text" placeholder="Task Title">
+    <textarea placeholder="Description"></textarea>
+    <button onclick="navigateTo('dashboard')">Save</button>
+    <button onclick="navigateTo('dashboard')">Cancel</button>
+  </div>
+
+  <!-- Settings Screen -->
+  <div class="screen hidden" id="settings-screen">
+    <h2>Settings</h2>
+    <label><input type="checkbox"> Notifications</label><br>
+    <label><input type="checkbox"> Dark Mode</label><br>
+    <button onclick="navigateTo('dashboard')">Back</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
