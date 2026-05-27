@@ -1,45 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive Prototype</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Usability Testing Tool</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Login Screen -->
-  <div class="screen" id="login-screen">
-    <h2>Login</h2>
-    <input type="text" placeholder="Username">
-    <input type="password" placeholder="Password">
-    <button onclick="navigateTo('dashboard')">Login</button>
-  </div>
 
-  <!-- Dashboard Screen -->
-  <div class="screen hidden" id="dashboard-screen">
-    <h2>Dashboard</h2>
-    <button onclick="navigateTo('create-task')">+ Create Task</button>
-    <button onclick="navigateTo('settings')">Settings</button>
-    <button onclick="navigateTo('login')">Logout</button>
-  </div>
+    <div class="container">
+        <h1>Usability Testing Survey</h1>
 
-  <!-- Create Task Screen -->
-  <div class="screen hidden" id="create-task-screen">
-    <h2>New Task</h2>
-    <input type="text" placeholder="Task Title">
-    <textarea placeholder="Description"></textarea>
-    <button onclick="navigateTo('dashboard')">Save</button>
-    <button onclick="navigateTo('dashboard')">Cancel</button>
-  </div>
+        <h3>Task Scenario</h3>
+        <p>Imagine you are using an online shopping application.</p>
 
-  <!-- Settings Screen -->
-  <div class="screen hidden" id="settings-screen">
-    <h2>Settings</h2>
-    <label><input type="checkbox"> Notifications</label><br>
-    <label><input type="checkbox"> Dark Mode</label><br>
-    <button onclick="navigateTo('dashboard')">Back</button>
-  </div>
+        <label>User Name:</label>
+        <input type="text" id="username">
 
-  <script src="script.js"></script>
+        <label>Task Completion (1-5):</label>
+        <input type="number" id="task" min="1" max="5">
+
+        <label>Ease of Use (1-5):</label>
+        <input type="number" id="ease" min="1" max="5">
+
+        <label>Overall Satisfaction (1-5):</label>
+        <input type="number" id="satisfaction" min="1" max="5">
+
+        <label>Feedback:</label>
+        <textarea id="feedback"></textarea>
+
+        <button onclick="submitSurvey()">Submit</button>
+
+        <h2>Results</h2>
+        <div id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
